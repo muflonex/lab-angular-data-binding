@@ -32,9 +32,7 @@ export class FoodListComponent implements OnInit {
     } else {
       let index = this.dailyList.indexOf(food);
       food.quantity = parseInt(quantity.value);
-      if (food.quantity === 0) {
-        this.dailyList.splice(index, 1);
-      }
+
       this.dailyList[index]["quantity"] = food.quantity;
       this.dailyList[index]["total"] = food.quantity * food.calories;
       this.total = 0;
@@ -42,7 +40,9 @@ export class FoodListComponent implements OnInit {
         console.log(e["total"]);
         this.total += e["total"];
       });
-
+      if (food.quantity === 0) {
+        this.dailyList.splice(index, 1);
+      }
     }
   }
   ngOnInit() {
