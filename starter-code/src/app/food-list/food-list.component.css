@@ -1,23 +1,49 @@
+*{
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 14px;
+}
+.global{
+  display: flex;
+}
+.list-container{
+  display: flex;
+  flex-wrap:wrap;
+  justify-content: space-between;
+}
 .wrapper{
   display:flex;
-  justify-content: center;
+  flex-direction: column;
+  width: 50vw;
+
 }
 .food-container{
   display:flex;
+  max-width: 12vw;
+  flex-direction: column;
   margin: 10px 5px;
-  width: 35vw;
   padding: 20px;
   border: 1px solid grey;
   position:relative;
+  box-shadow: black 0 0 2.5px;
+  position: relative;
+  transition: all 0.3s ease-in;
+  background:white;
+}
+.food-container:hover{
+  transform: scale(1.1);
+  z-index:2;
 }
 .food-container img{
   height: 25vh;
-  min-width: 50%;
-  display:inline-block;
+  object-fit: contain;
+}
+.title{
+  text-align: center;
 }
 .search{
   padding: 5px 0;
-  width: 50%;
+  width: calc(100% - 10px);
+  margin-bottom: 20px;
 }
 .food-details{
   display:flex;
@@ -25,18 +51,63 @@
   margin: auto;
 }
 .calories{
+  display:flex;
+  justify-content: center;
+  flex-direction: column;
   position:absolute;
   top: 10px;
   right: 10px;
+  background-color:white;
+  border-radius: 50%;
+  height: 50px;
+  box-shadow: 0 0 5px black;
+  transform:rotate(-30deg);
+  font-weight: 700;
+  color: green;
 }
 .calculations h2{
   text-align: center;
 }
 .calculations{
   min-width: 35vw;
+  padding: 20px;
+  background: greenyellow;
+  margin: 20px;
+  max-height: 30vw;
+}
+.foodAdd{
+  display:flex;
+  justify-content: space-between;
+  margin: 5px;
+  padding: 5px 10px;
+  width: calc(100%-5px);
+}
+strong{
+  color:darkgreen;
+  font-weight: 700;
+  font-size: 18px;
 }
 .foodAdd input{
   margin: 5px;
   padding: 5px 10px;
-  width: 20%;
+}
+button{
+  background: green;
+  color:white;
+  font-weight: 700;
+  border: none;
+  padding: 10px 20px;
+  transition: all 0.3s ease-in-out;
+  position:relative;
+  z-index:1;
+}
+button:hover{
+  background: white;
+  color:darkgreen;
+  border: 1px solid darkgreen
+}
+h2{
+  font-size: 20px;
+  color:darkgreen;
+  text-shadow: 0px 0px white;
 }
