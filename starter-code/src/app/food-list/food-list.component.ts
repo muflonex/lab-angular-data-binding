@@ -9,9 +9,9 @@ import { FilterPipe } from "../filter.pipe";
 })
 export class FoodListComponent implements OnInit {
   foods: Array<Object>;
-  dailyList: Array<Object>=[];
+  dailyList: Array<Object> = [];
   show: boolean = false;
-  total: number = 0
+  total: number = 0;
   constructor() {}
 
   toggle() {
@@ -21,25 +21,29 @@ export class FoodListComponent implements OnInit {
     this.foods.push({ name: name, calories: calories, image: image });
   }
   addToDaily(food, quantity) {
-    if(this.dailyList.indexOf(food) === -1){
-      food.quantity = parseInt(quantity.value)
-      food.total = quantity.value*food.calories
+    if (this.dailyList.indexOf(food) === -1) {
+      food.quantity = parseInt(quantity.value);
+      food.total = quantity.value * food.calories;
       this.dailyList.push(food);
       this.dailyList.forEach(e => {
-        console.log(e["total"])
-        this.total += e["total"]})
-     
-    }else{
-      let index = this.dailyList.indexOf(food)
-      food.quantity = parseInt(quantity.value)
-      this.dailyList[index]["quantity"] = food.quantity
-      this.dailyList[index]["total"] = food.quantity*food.calories
-      this.total=0
+        console.log(e["total"]);
+        this.total += e["total"];
+      });
+    } else {
+      let index = this.dailyList.indexOf(food);
+      food.quantity = parseInt(quantity.value);
+      if (food.quantity === 0) {
+        this.dailyList.splice(index, 1);
+      }
+      this.dailyList[index]["quantity"] = food.quantity;
+      this.dailyList[index]["total"] = food.quantity * food.calories;
+      this.total = 0;
       this.dailyList.forEach(e => {
-        console.log(e["total"])
-        this.total += e["total"]})
-    }
+        console.log(e["total"]);
+        this.total += e["total"];
+      });
 
+    }
   }
   ngOnInit() {
     this.foods = foods;
