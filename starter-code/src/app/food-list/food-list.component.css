@@ -1,0 +1,42 @@
+.wrapper{
+  display:flex;
+  justify-content: center;
+}
+.food-container{
+  display:flex;
+  margin: 10px 5px;
+  width: 35vw;
+  padding: 20px;
+  border: 1px solid grey;
+  position:relative;
+}
+.food-container img{
+  height: 25vh;
+  min-width: 50%;
+  display:inline-block;
+}
+.search{
+  padding: 5px 0;
+  width: 50%;
+}
+.food-details{
+  display:flex;
+  flex-direction: column;
+  margin: auto;
+}
+.calories{
+  position:absolute;
+  top: 10px;
+  right: 10px;
+}
+.calculations h2{
+  text-align: center;
+}
+.calculations{
+  min-width: 35vw;
+}
+.foodAdd input{
+  margin: 5px;
+  padding: 5px 10px;
+  width: 20%;
+}
