@@ -69,11 +69,18 @@
   text-align: center;
 }
 .calculations{
-  min-width: 35vw;
+  min-width: 15vw;
   padding: 20px;
   background: greenyellow;
   margin: 20px;
   max-height: 30vw;
+}
+.listItem{
+  width: 100%;
+}
+.listItem p{
+  display:flex;
+  justify-content: space-between;
 }
 .foodAdd{
   display:flex;
@@ -110,4 +117,7 @@ h2{
   font-size: 20px;
   color:darkgreen;
   text-shadow: 0px 0px white;
+}
+.total{
+  text-align: end;
 }

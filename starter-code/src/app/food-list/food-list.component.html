@@ -22,13 +22,13 @@
     </div>
   </div>
   <div class="calculations">
-    <h2>Today's foods:
-      <span>{{total}} cal</span>
-    </h2>
-    <div *ngFor="let position of dailyList">
-      <p><strong>{{position.quantity}}x </strong> {{position.name}} -
+    <h2>Today's foods</h2>
+    <div class="listItem" *ngFor="let position of dailyList">
+      <p><strong>{{position.quantity}}x </strong><span>{{position.name}}</span>
         <strong>{{position.total}} cal</strong>
       </p>
     </div>
+    <p>______________________________</p>
+      <p class="total"><strong>{{total}} cal</strong></p>
   </div>
 </div>
