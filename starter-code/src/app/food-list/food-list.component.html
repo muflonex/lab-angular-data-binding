@@ -12,7 +12,7 @@
       <img [src]="food.image" alt="{{food.name}}">
       <div class="food-details">
         <h2>{{food.name}}</h2>
-        <input type="number" [value]="food.quantity" #qty>
+        <input type="number" [value]="food.quantity" min="0" #qty>
         <button type="add" (click)="addToDaily(food, qty)">+</button>
         <p class="calories">{{food.calories}} cal.</p>
       </div>

@@ -33,7 +33,8 @@ export class FoodListComponent implements OnInit {
       let index = this.dailyList.indexOf(food)
       food.quantity = parseInt(quantity.value)
       this.dailyList[index]["quantity"] = food.quantity
-      food.dailyList[index]["total"] = quantity.value*food.calories
+      this.dailyList[index]["total"] = food.quantity*food.calories
+      this.total=0
       this.dailyList.forEach(e => {
         console.log(e["total"])
         this.total += e["total"]})
